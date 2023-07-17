@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Navlog Checklist",
+  "name": "Flight Plan Navlog Waypoints",
   "icons": [
     {
       "src": "favicon.ico",
