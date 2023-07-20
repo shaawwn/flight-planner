@@ -1,6 +1,8 @@
 * {
     margin: 0px;
-    padding: 0px;
+    /* padding: 0px; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* color: #e9edf7; */
   }
@@ -14,8 +16,12 @@
     --font-contrast: white;
 }
 
+
 body, html {
+
     height: 100%;
+    /* height: --webkit-fill-available; */
+    /* max-width: 100%; */
 }
   
 body {
@@ -32,13 +38,16 @@ body {
     background-color: var(--background-main);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
+    margin-top:5vh;
     /* background-color: red; */
 }
 
 .header, .timer, .waypoint {
     background-color: var(--waypoint-main);
 }
+
+
 .btn {
     border-radius: 50px;
     background-color: white;
@@ -84,20 +93,17 @@ body {
 
 .waypoint {
     background-color: var(--waypoint-main);
-    width: 100%;
+    max-width: 100%;
     height: 150px;
     text-align: center;
-    /* border-bottom: 2px solid red; */
+    background-color: red;
     display: flex;
-    /* justify-content: space-between; */
+    /* overflow: hidden; */
 }
 
 .waypoint-content {
     display: flex;
-    /* justify-content: space-between; */
     gap: 30px;
-    /* background-color: red; */
-    /* background-color: green; */
     width: 73%;
 }
 
@@ -125,7 +131,6 @@ body {
 
 .waypoint-add {
     background-color: var(--waypoint-add);
-    /* background-color: red; */
     color: white;
     justify-content: flex-start;
 }
@@ -149,6 +154,7 @@ body {
     display: flex;
     flex-direction: column;
     color: var(--font-main);
+    z-index: 10;
 }
 
 .waypoint-add-menu-row {
@@ -179,7 +185,7 @@ body {
 /* Timer */
 
 .timer {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     width: 100%;
     height: 150px;

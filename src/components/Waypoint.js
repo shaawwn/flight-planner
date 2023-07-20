@@ -4,7 +4,7 @@ import {faLocationDot, faCheck} from '@fortawesome/free-solid-svg-icons'
 
 function Waypoint({waypoint}) {
 
-    const [status, setStatue] = useState(waypoint.status)
+    const [status, setStatus] = useState(waypoint.status)
     const [style, setStyle] = useState({'backgroundColor': '#dfedda'})
     const [icon, setIcon] = useState(faLocationDot)
 
@@ -12,14 +12,21 @@ function Waypoint({waypoint}) {
         // TODO
     }
     function handleClick(e) {
-        if(waypoint.status === 'pending') {
-            if(window.confirm("Mark waypoint as complete?")) {
-                console.log("Marking waypoint as complete", e.target.parentNode.parentNode)
-                setStyle({'background-color': '#74D154'})
-                setIcon(faCheck)
-                // change the icon and styling to reflect a completed waypoint (green, checkmark)
-            }
-        } 
+        if(status === 'pending') {
+            setStyle({'backgroundColor': '#74d154'})
+            setIcon(faCheck)
+            setStatus('complete')
+            // if(window.confirm("Mark waypoint as complete?")) {
+            //     console.log("Marking waypoint as complete", e.target.parentNode.parentNode)
+            //     setStyle({'background-color': '#74D154'})
+            //     setIcon(faCheck)
+            //     // change the icon and styling to reflect a completed waypoint (green, checkmark)
+            // }
+        } else if(status === 'complete') {
+            setStyle({'backgroundColor': '#dfedda'})
+            setIcon(faLocationDot)
+            setStatus('pending')
+        }
     }
     return(
         <div className="waypoint" style={style}>
