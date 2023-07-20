@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2c689516.css",
-    "main.js": "/static/js/main.7fd05763.js",
-    "index.html": "/index.html",
-    "main.2c689516.css.map": "/static/css/main.2c689516.css.map",
-    "main.7fd05763.js.map": "/static/js/main.7fd05763.js.map"
+    "main.css": "/flight-planner/static/css/main.2c689516.css",
+    "main.js": "/flight-planner/static/js/main.7fd05763.js",
+    "index.html": "/flight-planner/index.html",
+    "main.2c689516.css.map": "/flight-planner/static/css/main.2c689516.css.map",
+    "main.7fd05763.js.map": "/flight-planner/static/js/main.7fd05763.js.map"
   },
   "entrypoints": [
     "static/css/main.2c689516.css",
