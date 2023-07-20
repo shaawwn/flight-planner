@@ -12,7 +12,7 @@ function PlannerBody({waypoints, addWaypoint}) {
         <div className="planner-body">
             {waypoints ?
             waypoints.map((waypoint) => 
-                <Waypoint waypoint={waypoint}/>
+                <Waypoint key={uuidv4()} waypoint={waypoint}/>
             )
             :<span>No waypoints</span>
             }

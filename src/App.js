@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import style from './styles/style.css'
 
 import RouteHeader from '../src/components/RouteHeader'
+import DepartureArrivalInput from '../src/components/DepartureArrivalInput'
 import Waypoint from '../src/components/Waypoint'
 import WaypointAdd from '../src/components/WaypointAdd'
 import WaypointAddMenu from '../src/components/WaypointAddMenu'
@@ -21,6 +22,10 @@ function App() {
       // Or, at the least, should have a small animation like a caret rotation to show it as a dropdown
   const [displayMenu, setDisplayMenu] = useState(false) // 
 
+  const [planInput, setPlanInput] = useState(false) // false = haven't put in airport codes yet
+  const [departure, setDeparture] = useState("DEP")
+  const [arrival, setArrival] = useState('ARR')
+
 
 
   function toggleAddWaypointMenu() {
@@ -32,6 +37,13 @@ function App() {
       setDisplayMenu(true)
     }
 
+  }
+
+  function addDepartureArrivalCodes(dep, arr) {
+    console.log("Adding...", dep, arr)
+    setDeparture(dep)
+    setArrival(arr)
+    setPlanInput(true)
   }
 
   function addWaypoint(waypoint) {
@@ -78,7 +90,12 @@ function App() {
 
   return (
     <div className="App">
-      <RouteHeader />
+      {/* <RouteHeader 
+        departure={"DEP"}
+        arrival={"ARR"}
+      /> */}
+      {/* <DepartureArrivalInput /> */}
+      {planInput === false ? <DepartureArrivalInput addDepartureArrivalCodes={addDepartureArrivalCodes}/> : <RouteHeader departure={departure} arrival={arrival}/>}
       {displayWaypointCreation()}
       <PlannerBody 
         waypoints={waypoints}
