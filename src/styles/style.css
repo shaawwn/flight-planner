@@ -85,7 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    background-color: red;
+    /* background-color: red; */
     height: 60%;
     overflow: scroll;
 }
