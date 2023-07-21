@@ -9,6 +9,7 @@ import WaypointAdd from '../src/components/WaypointAdd'
 import WaypointAddMenu from '../src/components/WaypointAddMenu'
 import Timer from '../src/components/Timer'
 import PlannerBody from '../src/components/PlannerBody'
+import Backfill from '../src/components/Backfill'
 
 function App() {
 
@@ -86,6 +87,7 @@ function App() {
         waypoints={waypoints}
         addWaypoint={addWaypoint}
         />
+      <Backfill />
       <Timer />
     </div>
   );
