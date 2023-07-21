@@ -23,6 +23,7 @@ function App() {
   const [displayMenu, setDisplayMenu] = useState(false) // 
 
   const [planInput, setPlanInput] = useState(false) // false = haven't put in airport codes yet
+  const [planFinalize, setPlanFinalize] = useState(false) // set true to complete plan and rmeove add waypoint option
   const [departure, setDeparture] = useState("DEP")
   const [arrival, setArrival] = useState('ARR')
 
@@ -53,9 +54,12 @@ function App() {
 
   function displayWaypointCreation() {
 
+    if(planFinalize) {
+      return false
+    }
     return(
       <>
-        <WaypointAdd toggleAddWaypointMenu={toggleAddWaypointMenu} toggle={displayMenu}/>
+        <WaypointAdd toggleAddWaypointMenu={toggleAddWaypointMenu} toggle={displayMenu} finalize={setPlanFinalize}/>
         {displayMenu === false ? <span></span>
         :<WaypointAddMenu 
           addWaypoint={addWaypoint}
@@ -67,25 +71,6 @@ function App() {
   }
   useEffect(() => {
 
-    // const _waypoints = [
-    //     {
-    //     'name': 'custom waypoint 1',
-    //     'heading': '180°',
-    //     'ete': `6'24''`,
-    //     },
-    //     {
-    //       'name': 'custom waypoint 2',
-    //       'heading': '279°',
-    //       'ete': `9'00''`,
-    //     },
-    //     {
-    //       'name': 'custom waypoint 3',
-    //       'heading': '11°',
-    //       'ete': `12'24''`,
-    //     },
-    // ]
-    
-    // setWaypoints(_waypoints)
   }, [])
 
   return (
