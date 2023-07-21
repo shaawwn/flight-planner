@@ -38,9 +38,7 @@ body {
     background-color: var(--background-main);
     display: flex;
     flex-direction: column;
-    height: 95vh;
-    margin-top:5vh;
-    /* background-color: red; */
+    height: 100vh;
 }
 
 .header, .timer, .waypoint {
@@ -62,6 +60,7 @@ body {
     height: 150px;
     text-align: center;
     font-size: 36px;
+    position: fixed;
 }
 
 .airport-add {
@@ -133,6 +132,7 @@ body {
     background-color: var(--waypoint-add);
     color: white;
     justify-content: flex-start;
+    margin-top: 150px;
 }
 
 .waypoint-add > p {
@@ -177,15 +177,23 @@ body {
     font-size: 26px;
 }
 
+.waypoint-add-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    height: 150px;
+}
 .waypoint-add-btn {
-    /* margin-left: 550px; */
-    margin: 25px 550px;
+    margin-right: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin: 25px 550px; */
+    /* margin-left: 50%; */
 }
 
 /* Timer */
 
 .timer {
-    /* position: fixed; */
+    position: fixed;
     bottom: 0px;
     width: 100%;
     height: 150px;

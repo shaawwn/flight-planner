@@ -5,10 +5,16 @@ import {faPlus, faCaretDown} from '@fortawesome/free-solid-svg-icons'
 function DepartureArrivalInput({addDepartureArrivalCodes}) {
 
     function handleClick() {
+
         let departure = document.getElementsByName('departure')[0]
         let arrival = document.getElementsByName('arrival')[0]
 
-        addDepartureArrivalCodes(departure.value, arrival.value)     
+        if(!departure.value || !arrival.value) {
+            alert("You must enter values for both fields")
+            return false
+        }
+
+        addDepartureArrivalCodes(departure.value.toUpperCase(), arrival.value.toUpperCase())     
     }
     return(
         <div className="header airport-add">

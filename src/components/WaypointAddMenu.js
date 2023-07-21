@@ -45,12 +45,15 @@ function WaypointAddMenu({addWaypoint, toggleAddWaypointMenu}) {
                 <label htmlFor="ete">ETE</label>
                 <input name="ete" type="text" placeholder="Enter an ETE (Hours/Minutes/Seconds)"></input>  
             </div>
-            <FontAwesomeIcon 
-                icon={faPlus} 
-                size="3x" 
-                className="waypoint-add-btn btn"
-                onClick={(e) => handleClick(e)}
-                />
+            <div className="waypoint-add-btn-wrapper">
+                <FontAwesomeIcon 
+                    icon={faPlus} 
+                    size="3x" 
+                    className="waypoint-add-btn btn"
+                    onClick={(e) => handleClick(e)}
+                    />
+            </div>
+
         </div>
     )
 }

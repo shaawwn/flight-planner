@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faStopwatch, faClockRotateLeft} from '@fortawesome/free-solid-svg-icons'
+import {faStopwatch, faClockRotateLeft, faCirclePause} from '@fortawesome/free-solid-svg-icons'
 
 
 function Timer() {
@@ -16,8 +16,17 @@ function Timer() {
 
 
     function handleClick() {
-        console.log("Clicking timer icon")
-        setActive(true)
+
+        if(active) {
+            // pause
+            clearInterval(timerID)
+            setActive(false)
+
+        } else if(!active) {
+            // start
+            setActive(true)
+        }
+        // setActive(true)
     }
 
     function displayIcon(icon) {
@@ -65,6 +74,26 @@ function Timer() {
             <p className="timer-display">{formatTimeDisplay(tick)}</p>
         )
     }
+
+    function displayStopWatchPause() {
+
+        if(active) {
+            return(
+                <FontAwesomeIcon icon={faCirclePause} 
+                    className="timer-icon"
+                    onClick={handleClick}
+                />
+            )
+        } else if(!active) {
+            return(
+                <FontAwesomeIcon 
+                    icon={faStopwatch}
+                    className="timer-icon"
+                    onClick={handleClick}
+                />
+            )
+        }
+    }
     useEffect(() => {
         if(active === true) {
             setTimerID(setInterval(() => {
@@ -76,11 +105,12 @@ function Timer() {
 
     return(
         <div className="timer">
-            <FontAwesomeIcon 
+            {/* <FontAwesomeIcon 
                 icon={faStopwatch}
                 className="timer-icon"
                 onClick={handleClick}
-            />
+            /> */}
+            {displayStopWatchPause()}
             {displayTimer()}
             <FontAwesomeIcon 
                 icon={faClockRotateLeft}
