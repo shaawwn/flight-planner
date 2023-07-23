@@ -87,7 +87,7 @@ function App() {
         waypoints={waypoints}
         addWaypoint={addWaypoint}
         />
-      <Backfill />
+      {/* <Backfill /> */}
       <Timer />
     </div>
   );
