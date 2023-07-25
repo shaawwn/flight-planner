@@ -45,7 +45,8 @@ function WaypointAddMenu({addWaypoint, toggleAddWaypointMenu}) {
                 <label htmlFor="ete">ETE</label>
                 <input name="ete" type="text" placeholder="Enter an ETE (Hours/Minutes/Seconds)"></input>  
             </div>
-            <div className="waypoint-add-btn-wrapper">
+            <div className="waypoint-add-btn-container">
+                <p>Confirm waypoint</p>
                 <FontAwesomeIcon 
                     icon={faPlus} 
                     size="3x" 

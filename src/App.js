@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
-import style from './styles/style.css'
-
+// import style from './styles/style.css'
+import style from './styles/_style.css';
 import RouteHeader from '../src/components/RouteHeader'
 import DepartureArrivalInput from '../src/components/DepartureArrivalInput'
 import Waypoint from '../src/components/Waypoint'
@@ -13,10 +13,7 @@ import Backfill from '../src/components/Backfill'
 
 function App() {
 
-  // const [waypoints, setWaypoints] = useState([])
-  // const waypoints = {
-  //   waypoints: ['1, 2, 4, 5, 5']
-  // }
+
   const [waypoints, setWaypoints] = useState([])
 
   // Add waypoint should be the default at the top, hower, when it is clicked, it should be replaces witht he menu
@@ -32,7 +29,6 @@ function App() {
 
   function toggleAddWaypointMenu() {
     // toggle the addWaypoint menu on/off
-    // console.log("Toggleing menu")
     if(displayMenu === true) {
       setDisplayMenu(false)
     } else {
@@ -42,14 +38,14 @@ function App() {
   }
 
   function addDepartureArrivalCodes(dep, arr) {
-    console.log("Adding...", dep, arr)
+    // console.log("Adding...", dep, arr)
     setDeparture(dep)
     setArrival(arr)
     setPlanInput(true)
   }
 
   function addWaypoint(waypoint) {
-    console.log("Adding waypoint", waypoint)
+    // console.log("Adding waypoint", waypoint)
     setWaypoints((prevWaypoints) => [...prevWaypoints, waypoint])
   }
 
@@ -76,18 +72,12 @@ function App() {
 
   return (
     <div className="App">
-      {/* <RouteHeader 
-        departure={"DEP"}
-        arrival={"ARR"}
-      /> */}
-      {/* <DepartureArrivalInput /> */}
       {planInput === false ? <DepartureArrivalInput addDepartureArrivalCodes={addDepartureArrivalCodes}/> : <RouteHeader departure={departure} arrival={arrival}/>}
       {displayWaypointCreation()}
       <PlannerBody 
         waypoints={waypoints}
         addWaypoint={addWaypoint}
         />
-      {/* <Backfill /> */}
       <Timer />
     </div>
   );

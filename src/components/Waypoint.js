@@ -16,12 +16,6 @@ function Waypoint({waypoint}) {
             setStyle({'backgroundColor': '#74d154'})
             setIcon(faCheck)
             setStatus('complete')
-            // if(window.confirm("Mark waypoint as complete?")) {
-            //     console.log("Marking waypoint as complete", e.target.parentNode.parentNode)
-            //     setStyle({'background-color': '#74D154'})
-            //     setIcon(faCheck)
-            //     // change the icon and styling to reflect a completed waypoint (green, checkmark)
-            // }
         } else if(status === 'complete') {
             setStyle({'backgroundColor': '#dfedda'})
             setIcon(faLocationDot)
@@ -38,6 +32,7 @@ function Waypoint({waypoint}) {
                 onClick={(e) => handleClick(e)}
                 />
             <div className="waypoint-content">
+                
                 <p className="waypoint-cell">{waypoint.name}</p>
                 {/* <div className="waypoint-desc"> */}
                 <p className="waypoint-cell waypoint-desc">{waypoint.desc}</p>

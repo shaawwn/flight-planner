@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-main: #d9d9d9;
+    --waypoint-main: #dfedda;
+    --interact-menu: #6d6cbb;
+    --font-main: #312727;
+    --font-contrast: #fefefe;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    background-color: var(--background-main);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.btn {
+    border-radius: 50px;
+    background-color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.header {
+    background-color: var(--waypoint-main);
+    width: 100%;
+    text-align: center;
+}
+
+.airport-add {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
+
+.airport-add-input-container {
+
+}
+
+.airport-add-input {
+    width: 80%;
+    font-size: 1.5rem;
+}
+
+.airport-add > .btn {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* planner-body */
+
+.planner-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+}
+
+/* waypoints */
+
+.waypoint {
+    background-color: var(--waypoint-main);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1rem;
+    max-height: 10rem;
+    border-bottom: 1px solid black;
+}
+
+.waypoint-content {
+    gap: 1.5rem;
+    width: 80%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-rows: [row1-start] 100%;
+}
+
+.waypoint-pending {
+    /* background-color: green; */
+}
+
+.waypoint-cell {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.waypoint-desc {
+    font-size: 1rem;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.waypoint-add {
+    background-color: var(--interact-menu);
+    color: var(--font-contrast);
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.waypoint-add > p {
+    font-size: 3rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.waypoint-add > .btn {
+    color: var(--font-main);
+}
+
+.waypoint-add-menu {
+    background-color: var(--interact-menu);
+    display: flex;
+    flex-direction: column;
+    color: var(--font-main);
+    z-index: 10;
+}
+
+.waypoint-add-menu-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--font-contrast);
+}
+
+.waypoint-add-menu-row > input {
+    width: 80%;
+    margin: auto;
+    line-height: 3rem;
+    font-size: 1.5rem;
+}
+
+.waypoint-add-menu-row > label {
+    margin-left: 3.5rem;
+    font-size: 1.5rem;
+}
+
+.waypoint-add-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem;
+}
+
+.waypoint-add-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.waypoint-add-btn-container > p {
+    color: var(--font-contrast);
+    font-size: 2rem;
+    margin: .5rem;
+}
+/* timer */
+
+.timer {
+    width: 100%;
+    /* font-size: 3.5rem; */
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--waypoint-main);
+    padding: 1rem;
+}
+
+.timer-display {
+    font-weight: bold;
+    font-size: 4rem;
+    margin: 0px;
+}
+
+.timer-icon {
+    width: 4rem;
+    height: 4rem;
+    /* margin-top: auto; */
+    /* margin-bottom: auto; */
+    margin: auto .5rem auto .5rem;
+}
