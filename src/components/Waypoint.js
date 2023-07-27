@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faLocationDot, faCheck} from '@fortawesome/free-solid-svg-icons'
+import {faLocationDot, faCheck, faBars} from '@fortawesome/free-solid-svg-icons'
 
 function Waypoint({waypoint}) {
 
@@ -22,6 +22,10 @@ function Waypoint({waypoint}) {
             setStatus('pending')
         }
     }
+
+    function openMenu() {
+        console.log("Open waypoint settings to delete/update waypoint")
+    }
     return(
         <div className="waypoint" style={style}>
             {/* Name, desc, heading, ete */}
@@ -40,6 +44,12 @@ function Waypoint({waypoint}) {
                 <p className="waypoint-cell">{waypoint.heading}</p>
                 <p className="waypoint-cell">{waypoint.ete}</p>
             </div>
+            {/* <FontAwesomeIcon
+                icon={faBars}
+                // className="btn"
+                onClick={openMenu}
+                size="3x"
+            /> */}
 
         </div>
     )
