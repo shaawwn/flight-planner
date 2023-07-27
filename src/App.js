@@ -24,6 +24,8 @@ function App() {
   const [planFinalize, setPlanFinalize] = useState(false) // set true to complete plan and rmeove add waypoint option
   const [departure, setDeparture] = useState("DEP")
   const [arrival, setArrival] = useState('ARR')
+  const [depRunway, setDepRunway] = useState('')
+  const [arrRunway, setArrRunway] = useState('')
 
 
 
@@ -37,16 +39,26 @@ function App() {
 
   }
 
-  function addDepartureArrivalCodes(dep, arr) {
+  function addDepartureArrivalCodes(dep, arr, dep_r, arr_r) {
     // console.log("Adding...", dep, arr)
     setDeparture(dep)
     setArrival(arr)
+    setDepRunway(dep_r)
+    setArrRunway(arr_r)
     setPlanInput(true)
   }
 
   function addWaypoint(waypoint) {
     // console.log("Adding waypoint", waypoint)
     setWaypoints((prevWaypoints) => [...prevWaypoints, waypoint])
+  }
+
+  function deleteWaypoint() {
+    // remove waypoint from list keeping the order of the other elements (if any)
+  }
+
+  function updateWaypoint() {
+    // edit waypoint content
   }
 
   function displayWaypointCreation() {
@@ -72,7 +84,7 @@ function App() {
 
   return (
     <div className="App">
-      {planInput === false ? <DepartureArrivalInput addDepartureArrivalCodes={addDepartureArrivalCodes}/> : <RouteHeader departure={departure} arrival={arrival}/>}
+      {planInput === false ? <DepartureArrivalInput addDepartureArrivalCodes={addDepartureArrivalCodes}/> : <RouteHeader departure={departure} arrival={arrival} depRunway={depRunway} arrRunway={arrRunway}/>}
       {displayWaypointCreation()}
       <PlannerBody 
         waypoints={waypoints}
